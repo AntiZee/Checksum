@@ -8,19 +8,20 @@
     background-color: #000;
     text-align: center;
     padding: 1rem;
-    font-size: 6rem;
+    font-size: 4rem;
 }
 #head2 {
     text-align: center;
     padding: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 #head3 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 #body {
     width: 50vw;
     margin: auto;
+    padding: 2rem;
 }
 body {
     background-color: #fff;
@@ -29,3 +30,12 @@ a, a:visited {
     color: #808080;
     text-decoration: none;
 }
+.menu {
+    list-style-type: none;
+}
+.menu li {
+    padding: 6px;
+}
+table, th, td {
+    border:1px solid black;
+  }
