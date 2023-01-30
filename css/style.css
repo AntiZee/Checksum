@@ -28,8 +28,14 @@ body {
     padding: 1rem;
 }
 #table1 a, a:visited {
+    padding: .5rem;
     color: #808080;
     text-decoration: none;
+}
+#table1 a:hover {
+    box-shadow: inset 100px 0 0 0 #808080;
+    color: #fff;
+    transition: .5s ease-in-out;
 }
 #table1, #table1 th, #table1 td {
     text-align: center;
