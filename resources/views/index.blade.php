@@ -6,15 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link  rel="stylesheet" href="{{ asset('/js/app.js') }}">
-    <title>Non-Academic Digital Certificate Validator</title>
+    <title>Non-Academic Digital Certificate Validator (SHA-512)</title>
 </head>
 <body>
     <header>
-        <h1 id="head1">Non-Academic Digital Certificate Validator</h1>
+        <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
         <div class="auth">
             <button>Login</button>
             <button>Register</button>
         </div>
     </header>
+    <div id="main">
+        <div id="droppable-zone">
+            <div id="droppable-zone-wrapper">
+            <div id="droppable-zone-text">Drop File Here</div>
+            </div>
+            <input class="droppable-file" id="input" type="file" placeholder="Input2">
+        </div>
+        <div class="submit">
+        <input class="btn btn-default" id="execute" type="button" value="Hash">
+        <label>
+            <input id="auto-update" type="checkbox" value="1" checked="checked">Auto Update
+        </label>
+        </div>
+        <div class="output">
+        <textarea id="output" placeholder="Output"></textarea>
+        </div>
+    </div>
 </body>
 </html>
