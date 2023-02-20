@@ -34,43 +34,48 @@ header {
   background-color: #2f72dc;
   color: #fff;
 }
-.drag-area {
-  display: flex;
-  border: 2px dashed #000;
-  height: 50vh;
+#droppable-zone {
+  border: 5px dashed #000;
+  border-radius: 20px;
+  height: 40vh;
   width: 50vw;
-  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+#droppable-zone-wrapper {
+  display: flex;
+  /*Vertical*/
   align-items: center;
+  /*Horizontal*/
   justify-content: center;
-  flex-direction: column;
-}
-.drag-area.active{
-  border: 2px solid #fff;
-}
-.drag-area header{
-  font-size: 30px;
-  font-weight: 500;
-  color: #fff;
-}
-.drag-area span{
-  font-size: 25px;
-  color: #000;
-  margin: 15px 0;
-}
-.drag-area button{
-  padding: 10px 25px;
-  font-size: 20px;
-  font-weight: 500;
-  border: none;
-  outline: none;
-  background: #fff;
-  color: #5256ad;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.drag-area img{
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+}
+#droppable-zone-text {
+  text-align: center;
+  font-size: 25px;
+}
+.droppable-file {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+textarea {
+  font-size: 20px;
+  height: 50px;
+  width: 45vw;
+  border: 5px double #000;
+  border-radius: 10px;
+}
+.input {
+  float: left;
+}
+.output {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

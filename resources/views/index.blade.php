@@ -16,11 +16,20 @@
             <button>Register</button>
         </div>
     </header>
-    <div class="drag-area">
-        <h2>Drag & drop your certificate here</h2>
-        <span>OR</span>
-        <button>Browse</button>
+    {{-- <div class="drag-area">
+        <h2>Drag & drop your certificate here OR click to browse</h2>
         <input type="file" hidden>
+    </div> --}}
+    <div class="input">
+        <div id="droppable-zone">
+          <div id="droppable-zone-wrapper">
+            <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
+          </div>
+          <input class="droppable-file" id="input" type="file">
+        </div>
+    </div>
+    <div class="output">
+        <textarea id="output" placeholder="SHA-512 Checksum"></textarea>
     </div>
 </body>
 </html>
