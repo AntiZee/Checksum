@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="output">
-        <textarea id="output" placeholder="SHA-512 Checksum"></textarea>
+        <textarea readonly id="output" placeholder="SHA-512 Checksum"></textarea>
     </div>
 </body>
 </html>
