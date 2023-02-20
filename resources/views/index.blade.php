@@ -16,22 +16,11 @@
             <button>Register</button>
         </div>
     </header>
-    <div id="main">
-        <div id="droppable-zone">
-            <div id="droppable-zone-wrapper">
-            <div id="droppable-zone-text">Drop File Here</div>
-            </div>
-            <input class="droppable-file" id="input" type="file" placeholder="Input2">
-        </div>
-        <div class="submit">
-        <input class="btn btn-default" id="execute" type="button" value="Hash">
-        <label>
-            <input id="auto-update" type="checkbox" value="1" checked="checked">Auto Update
-        </label>
-        </div>
-        <div class="output">
-        <textarea id="output" placeholder="Output"></textarea>
-        </div>
+    <div class="drag-area">
+        <h2>Drag & drop your certificate here</h2>
+        <span>OR</span>
+        <button>Browse</button>
+        <input type="file" hidden>
     </div>
 </body>
 </html>
