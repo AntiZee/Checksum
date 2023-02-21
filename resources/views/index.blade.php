@@ -22,7 +22,7 @@
           <div id="droppable-zone-wrapper">
             <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
           </div>
-          <input class="droppable-file" id="input" type="file" onchange="hash()">
+          <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
         </div>
     </div>
     <div class="output">
