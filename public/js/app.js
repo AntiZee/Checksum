@@ -6,6 +6,7 @@ function hash() {
         const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
         const h = CryptoJS.SHA512(wordArray);
         document.getElementById("output").value = h;
+        t.innerText = c.name;
     };
     r.readAsArrayBuffer(c);
 }
