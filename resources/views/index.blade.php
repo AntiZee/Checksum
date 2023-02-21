@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <title>Non-Academic Digital Certificate Validator (SHA-512)</title>
 </head>
 <body>
@@ -21,12 +22,11 @@
           <div id="droppable-zone-wrapper">
             <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
           </div>
-          <input class="droppable-file" id="input" type="file">
+          <input class="droppable-file" id="input" type="file" onchange="hash()">
         </div>
     </div>
     <div class="output">
         <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     </div>
 </body>
 </html>
