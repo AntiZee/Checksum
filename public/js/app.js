@@ -1,10 +1,11 @@
 function hash() {
     const c = document.getElementById("input").files[0];
-    const reader = new FileReader();
-    reader.onload = function (event) {
-        const wordArray = CryptoJS.lib.WordArray.create(event.target.result);
-        const h = CryptoJS.SHA512(wordArray).toString();
+    const t = document.getElementById("droppable-zone-text");
+    const r = new FileReader();
+    r.onload = function (e) {
+        const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
+        const h = CryptoJS.SHA512(wordArray);
         document.getElementById("output").value = h;
     };
-    reader.readAsArrayBuffer(c);
+    r.readAsArrayBuffer(c);
 }
