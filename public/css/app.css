@@ -64,11 +64,11 @@ header {
   cursor: pointer;
 }
 textarea {
-  font-size: 20px;
-  height: 25px;
+  font-size: 14px;
+  height: 20vh;
   width: 45vw;
   border: 5px double #000;
-  border-radius: 10px;
+  border-radius: 5px;
   resize: none;
   pointer-events: read;
 }
@@ -86,4 +86,5 @@ textarea {
   align-items: center;
   justify-content: center;
   text-align: center;
+  line-height: 20vh;
 }
