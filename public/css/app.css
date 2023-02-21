@@ -30,6 +30,9 @@ header {
   font-size: 1.2rem;
   cursor: pointer;
 }
+.auth button a{
+  text-decoration: none;
+}
 .auth button:hover {
   background-color: #2f72dc;
   color: #fff;
