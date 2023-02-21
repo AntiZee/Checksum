@@ -28,5 +28,8 @@
     <div class="output">
         <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
     </div>
+    <div class="remove">
+        <button id="remove" onclick="clearInput()">Remove</button>
+    </div>
 </body>
 </html>

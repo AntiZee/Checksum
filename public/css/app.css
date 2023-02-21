@@ -88,3 +88,15 @@ textarea {
   text-align: center;
   line-height: 20vh;
 }
+.remove {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#remove {
+  padding: 10px 15px;
+  background-color: #f00;
+  cursor: pointer;
+  border-radius: 5px;
+}
