@@ -9,12 +9,6 @@ function hash() {
         return;
     }
     const r = new FileReader();
-    r.onprogress = function (e) {
-        if (e.lengthComputable) {
-            const percent = (e.loaded / e.total * 100).toFixed(5);
-            t.innerText = `Hashing... ${percent}%`;
-        }
-    };
     r.onload = function (e) {
         const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
         const h = CryptoJS.SHA512(wordArray);

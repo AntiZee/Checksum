@@ -13,8 +13,8 @@
     <header>
         <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
         <div class="auth">
-            <button><a href="/login">Login</a></button>
-            <button><a href="/register">Register</a></button>
+            <a href="/login"><button>Login</button></a>
+            <a href="/register"><button>Register</button></a>
         </div>
     </header>
     <div class="input">
