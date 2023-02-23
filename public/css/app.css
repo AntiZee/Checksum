@@ -124,13 +124,13 @@ form .form-field::before {
   background-size: cover;
   background-repeat: no-repeat;
 }
-form .form-field:nth-child(1)::before {
+#e::before {
   background-image: url('/images/user-icon.png');
   width: 20px;
   height: 20px;
   top: 15px;
 }
-form .form-field:nth-child(2)::before {
+#p::before {
   background-image: url('/images/lock-icon.png');
   width: 16px;
   height: 16px;

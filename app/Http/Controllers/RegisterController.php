@@ -10,8 +10,12 @@ class RegisterController extends Controller
     {
         return view('register');
     }
-    function store()
+    function store(Request $r)
     {
-        
+        $r->validate([
+            'email' => 'required|email|unique:users',
+            'pass' => 'required|min:6'
+        ]);
+        dd($r);
     }
 }
