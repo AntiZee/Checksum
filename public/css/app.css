@@ -106,6 +106,14 @@ textarea {
   height: 100%;
   width: 100%;
 }
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+}
 form {
   width: 350px;
   position: absolute;
@@ -137,13 +145,12 @@ form .form-field::before {
 }
 form .form-field {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
   position: relative;
 }
 form input {
-  font-family: inherit;
   width: 100%;
   outline: none;
   background-color: #fff;
@@ -155,6 +162,9 @@ form input {
   font-size: 17px;
   color: #4A4A4A;
   text-indent: 40px;
+}
+form p {
+  color: #fff;
 }
 form .btn {
   outline: none;

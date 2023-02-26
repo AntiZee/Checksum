@@ -9,6 +9,7 @@
 </head>
 <body>
 <div id="bg">
+    <a href="/" class="back-button">&#8592; Back</a>
     <form action="/login" method="POST">
         @csrf
         <div class="form-field" id="e">
@@ -19,6 +20,9 @@
         </div>
         <div class="form-field">
             <button class="btn" type="submit">Log In</button>
+        </div>
+        <div class="form-field">
+            <p>Not registered yet? <a href="/register">Register</a></p>
         </div>
     </form>
 </div>

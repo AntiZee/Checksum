@@ -16,6 +16,6 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users',
             'pass' => 'required|min:6'
         ]);
-        dd($r);
+        dd('berhasil');
     }
 }
