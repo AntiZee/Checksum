@@ -10,7 +10,7 @@
 <body>
 <div id="bg">
     <a href="/" class="back-button">&#8592; Back</a>
-    <form action="/register" method="POST">
+    <form action="/register" method="POST" id="auth">
         @csrf
         @error('email')
             <div class="form-field">
@@ -22,9 +22,6 @@
                 <p>{{ $message }}</p>
             </div>
         @enderror
-        <div class="form-field">
-            <p></p>
-        </div>
         <div class="form-field" id="e">
             <input type="email" name="email" placeholder="Email" required/>
         </div>

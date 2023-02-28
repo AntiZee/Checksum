@@ -114,14 +114,14 @@ textarea {
   color: #fff;
   text-decoration: none;
 }
-form {
+#auth {
   width: 350px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-form .form-field::before {
+#auth .form-field::before {
   font-size: 20px;
   position: absolute;
   left: 15px;
@@ -143,14 +143,14 @@ form .form-field::before {
   width: 16px;
   height: 16px;
 }
-form .form-field {
+#auth .form-field {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
   position: relative;
 }
-form input {
+#auth input {
   width: 100%;
   outline: none;
   background-color: #fff;
@@ -163,10 +163,10 @@ form input {
   color: #4A4A4A;
   text-indent: 40px;
 }
-form p {
+#auth p {
   color: #fff;
 }
-form .btn {
+#auth .btn {
   outline: none;
   border: none;
   cursor: pointer;

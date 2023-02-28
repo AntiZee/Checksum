@@ -10,13 +10,23 @@
 <body>
 <div id="bg">
     <a href="/" class="back-button">&#8592; Back</a>
-    <form action="/login" method="POST">
+    <form action="/login" method="POST" id="auth">
         @csrf
+        @error('email')
+            <div class="form-field">
+                <p>{{ $message }}</p>
+            </div>
+        @enderror
+        @error('password')
+            <div class="form-field">
+                <p>{{ $message }}</p>
+            </div>
+        @enderror
         <div class="form-field" id="e">
             <input type="email" name="email" placeholder="Email" required/>
         </div>
         <div class="form-field" id="p">
-            <input type="password" name="pass" placeholder="Password" required/>
+            <input type="password" name="password" placeholder="Password" required/>
         </div>
         <div class="form-field">
             <button class="btn" type="submit">Log In</button>

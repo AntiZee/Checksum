@@ -10,6 +10,7 @@
     <title>Non-Academic Digital Certificate Validator (SHA-512)</title>
 </head>
 <body>
+    @guest
     <header>
         <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
         <div class="auth">
@@ -31,11 +32,15 @@
     <div class="remove">
         <button id="remove" onclick="clearInput()">Remove</button>
     </div>
+    @endguest
     @auth
     <header>
         <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
         <div class="auth">
-            <a href="/logout"><button>Logout</button></a>
+            <form action="{{ route('logout') }}" method="POST" id>
+                @csrf
+                <a href="#"><button>Logout</button></a>
+            </form>
         </div>
     </header>
     <div class="input">
