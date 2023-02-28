@@ -16,13 +16,17 @@ class RegisterController extends Controller
     {
         $v = $r->validate([
             'email' => 'required|email|unique:users',
-            'pass' => 'required|min:6'
+            'password' => 'required|min:6'
         ], [
-            'email.unique' => 'The email has already been taken.'
+            'email.required' => 'Please enter an email address.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'The email has already been taken.',
+            'password.required' => 'Please enter a password.',
+            'password.min' => 'The password must be at least 6 characters.'
         ]);
         $u = new User();
         $u->email = $v['email'];
-        $u->password = Hash::make($v['pass']);
+        $u->password = Hash::make($v['password']);
         $u->save();
         return redirect('/login');
     }

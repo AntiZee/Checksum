@@ -31,5 +31,27 @@
     <div class="remove">
         <button id="remove" onclick="clearInput()">Remove</button>
     </div>
+    @auth
+    <header>
+        <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
+        <div class="auth">
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </header>
+    <div class="input">
+        <div id="droppable-zone">
+          <div id="droppable-zone-wrapper">
+            <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
+          </div>
+          <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
+        </div>
+    </div>
+    <div class="output">
+        <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
+    </div>
+    <div class="remove">
+        <button id="remove" onclick="clearInput()">Remove</button>
+    </div>
+    @endauth
 </body>
 </html>

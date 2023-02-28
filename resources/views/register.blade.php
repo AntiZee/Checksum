@@ -17,6 +17,11 @@
                 <p>{{ $message }}</p>
             </div>
         @enderror
+        @error('password')
+            <div class="form-field">
+                <p>{{ $message }}</p>
+            </div>
+        @enderror
         <div class="form-field">
             <p></p>
         </div>
@@ -24,7 +29,7 @@
             <input type="email" name="email" placeholder="Email" required/>
         </div>
         <div class="form-field" id="p">
-            <input type="password" name="pass" placeholder="Password" required/>
+            <input type="password" name="password" placeholder="Password" required/>
         </div>
         <div class="form-field">
             <button class="btn" type="submit">Register</button>
