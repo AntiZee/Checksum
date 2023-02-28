@@ -88,7 +88,7 @@ textarea {
   text-align: center;
   line-height: 20vh;
 }
-.remove {
+.remove, .save {
   padding-top: 10px;
   display: flex;
   align-items: center;
@@ -97,6 +97,12 @@ textarea {
 #remove {
   padding: 10px 15px;
   background-color: #f00;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#save {
+  padding: 10px 15px;
+  background-color: #0f0;
   cursor: pointer;
   border-radius: 5px;
 }

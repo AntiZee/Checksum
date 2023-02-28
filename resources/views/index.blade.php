@@ -57,6 +57,9 @@
     <div class="remove">
         <button id="remove" onclick="clearInput()">Remove</button>
     </div>
+    <div class="save">
+        <button id="save" onclick="">Save</button>
+    </div>
     @endauth
 </body>
 </html>
