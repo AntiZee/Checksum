@@ -58,8 +58,18 @@
         <button id="remove" onclick="clearInput()">Remove</button>
     </div>
     <div class="save">
-        <button id="save" onclick="">Save</button>
+        <button id="save" onclick="" disabled>Save</button>
     </div>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th>SHA-512</th>
+            </tr>
+        </thead>
+    </table>
     @endauth
 </body>
 </html>

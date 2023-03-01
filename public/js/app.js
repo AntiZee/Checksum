@@ -3,6 +3,7 @@ function hash() {
     const text = document.getElementById("droppable-zone-text");
     const output = document.getElementById("output");
     const validExt = ["image/jpeg", "image/png", "application/pdf"];
+    const save = document.getElementById("save");
     if (!validExt.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
         clearInput();
@@ -11,9 +12,10 @@ function hash() {
     const r = new FileReader();
     r.onload = function (e) {
         const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
-        const h = CryptoJS.SHA512(wordArray);
-        output.value = h;
+        const hash = CryptoJS.SHA512(wordArray);
+        output.value = hash;
         text.innerText = input.name;
+        save.removeAttribute("disabled");
     };
     r.readAsArrayBuffer(input);
 }
@@ -21,4 +23,10 @@ function clearInput() {
     document.getElementById("input").value = "";
     document.getElementById("droppable-zone-text").innerText = "Drag & drop your certificate here OR click to browse";
     document.getElementById("output").value = "";
+    document.getElementById("save").setAttribute("disabled", "disabled");
+}
+function save() {
+  const text = document.getElementById("droppable-zone-text").innerText;
+  const checksum = document.getElementById("output").value;
+  saveToCertificateTable(text, checksum);
 }
