@@ -37,6 +37,9 @@
     <header>
         <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
         <div class="auth">
+            <form class="search">
+                <input type="text" placeholder="Search...">
+            </form>
             <form action="{{ route('logout') }}" method="POST" id>
                 @csrf
                 <a href="#"><button>Logout</button></a>
@@ -58,7 +61,7 @@
         <button id="remove" onclick="clearInput()">Remove</button>
     </div>
     <div class="save">
-        <button id="save" onclick="" disabled>Save</button>
+        <button id="save" onclick="save()" disabled>Save</button>
     </div>
     <table>
         <thead>

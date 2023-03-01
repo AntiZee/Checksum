@@ -26,7 +26,20 @@ function clearInput() {
     document.getElementById("save").setAttribute("disabled", "disabled");
 }
 function save() {
-  const text = document.getElementById("droppable-zone-text").innerText;
-  const checksum = document.getElementById("output").value;
-  saveToCertificateTable(text, checksum);
+    const text = document.getElementById("droppable-zone-text").innerText;
+    const checksum = document.getElementById("output").value;
+    const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const url = '/save';
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                window.location.href = '/';
+            }
+        }
+    };
+    xhr.open('POST', url);
+    xhr.setRequestHeader('X-CSRF-TOKEN', token);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({ name: text, sha512: checksum }));
 }

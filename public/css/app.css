@@ -38,6 +38,15 @@ header {
   background-color: #2f72dc;
   color: #fff;
 }
+.search {
+  display: flex;
+  align-items: center;
+}
+.search input {
+  height: 25px;
+  width: 150px;
+  font-size: 12px;
+}
 #droppable-zone {
   border: 5px dashed #000;
   border-radius: 20px;
