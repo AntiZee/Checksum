@@ -40,9 +40,9 @@
             <form class="search">
                 <input type="text" placeholder="Search...">
             </form>
-            <form action="{{ route('logout') }}" method="POST" id>
+            <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <a href="#"><button>Logout</button></a>
+                <button>Logout</button>
             </form>
         </div>
     </header>
@@ -61,12 +61,16 @@
         <button id="remove" onclick="clearInput()">Remove</button>
     </div>
     <div class="save">
-        <button id="save" onclick="save()" disabled>Save</button>
+        <form action="{{ route('save') }}" method="POST">
+            @csrf
+            <input type="hidden" name="name" id="namefile" readonly>
+            <input type="hidden" name="sha512" id="hash" readonly>
+            <button id="save" type="submit" disabled>Save</button>
+        </form>
     </div>
     <table>
         <thead>
             <tr>
-                <th>No.</th>
 				<th>Name</th>
 				<th>Date</th>
 				<th>SHA-512</th>

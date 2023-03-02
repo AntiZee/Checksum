@@ -89,7 +89,6 @@ textarea {
 .output {
   padding-top: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 ::placeholder {
@@ -210,11 +209,8 @@ th {
   border: 1px solid black;
 }
 th:nth-child(1) {
-  width: 3%;
+  width: 15%;
 }
 th:nth-child(2) {
-  width: 20%;
-}
-th:nth-child(3) {
-  width: 10%;
+  width: 15%;
 }
