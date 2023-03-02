@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('sha512');
-            $table->timestamps();
+            $table->string('time');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
