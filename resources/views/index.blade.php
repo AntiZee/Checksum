@@ -39,7 +39,7 @@
             <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
             <div class="auth">
                 <form class="search">
-                    <input type="text" placeholder="Search...">
+                    <input type="text" name="search" placeholder="Search...">
                 </form>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf

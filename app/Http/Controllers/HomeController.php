@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Certificate;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    function index()
+    function index(Request $r)
     {
         if (Auth::user()) {
             $user = Auth::user();
