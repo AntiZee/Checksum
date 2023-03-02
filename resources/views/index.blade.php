@@ -52,8 +52,7 @@
                 <div id="droppable-zone-wrapper">
                     <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
                 </div>
-                <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf"
-                    onchange="hash()">
+                <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
             </div>
         </div>
         <div class="output">
@@ -79,18 +78,18 @@
                 </tr>
             </thead>
             <tbody>
-                @if (session('certificates') && count(session('certificates')) > 0)
-                    @foreach (session('certificates') as $c)
+                @if ($certificates->isEmpty())
+                    <tr>
+                        <td colspan="3">No Data</td>
+                    </tr>
+                @else
+                    @foreach ($certificates as $c)
                         <tr>
                             <td>{{ $c->name }}</td>
                             <td>{{ $c->time }}</td>
                             <td>{{ $c->sha512 }}</td>
                         </tr>
                     @endforeach
-                @else
-                    <tr>
-                        <td colspan="3">No Data</td>
-                    </tr>
                 @endif
             </tbody>
         </table>
