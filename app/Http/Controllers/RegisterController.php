@@ -14,7 +14,7 @@ class RegisterController extends Controller
     }
     function store(Request $r)
     {
-        $v = $r->validate([
+        $valid = $r->validate([
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6'
         ], [
@@ -24,10 +24,10 @@ class RegisterController extends Controller
             'password.required' => 'Please enter a password.',
             'password.min' => 'The password must be at least 6 characters.'
         ]);
-        $u = new User();
-        $u->email = $v['email'];
-        $u->password = Hash::make($v['password']);
-        $u->save();
+        $user = new User();
+        $user->email = $valid['email'];
+        $user->password = Hash::make($valid['password']);
+        $user->save();
         return redirect('/login');
     }
 }

@@ -13,13 +13,14 @@ class SaveController extends Controller
     {
         $now = Carbon::now();
         $format = $now->format('D j-M-Y g:i:s.u A');
-        $u = Auth::user();
-        $c = new Certificate();
-        $c->user_id = $u->id;
-        $c->name = $r->input('name');
-        $c->sha512 = $r->input('sha512');
-        $c->time = $format;
-        $c->save();
-        return redirect('/');
+        $user = Auth::user();
+        $certificate = new Certificate();
+        $certificate->user_id = $user->id;
+        $certificate->name = $r->input('name');
+        $certificate->sha512 = $r->input('sha512');
+        $certificate->time = $format;
+        $certificate->save();
+        $certificates = Certificate::where('user_id', $user->id)->orderBy('time')->get();
+        return redirect('/')->with('certificates', $certificates);
     }
 }

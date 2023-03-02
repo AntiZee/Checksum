@@ -202,7 +202,7 @@ textarea {
 table {
   width: 100%;
 }
-th {
+th, td {
   background-color: #808080;
   text-align: center;
   padding: 8px;
@@ -213,4 +213,9 @@ th:nth-child(1) {
 }
 th:nth-child(2) {
   width: 15%;
+}
+td {
+  background-color: #000;
+  color: #fff;
+  border: none;
 }

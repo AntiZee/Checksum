@@ -13,18 +13,18 @@ class LoginController extends Controller
     }
     function auth(Request $r)
     {
-        $v = $r->validate([
+        $valid = $r->validate([
             'email' => 'required|email',
             'password' => 'required'
         ], [
             'email.required' => 'Please enter an email address.',
             'password.required' => 'Please enter a password.'
         ]);
-        $c = [
-            'email' => $v['email'],
-            'password' => $v['password']
+        $credential = [
+            'email' => $valid['email'],
+            'password' => $valid['password']
         ];
-        if (Auth::attempt($c)) {
+        if (Auth::attempt($credential)) {
             $r->session()->regenerate();
             return redirect()->intended('/');
         }
