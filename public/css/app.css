@@ -38,11 +38,8 @@ header {
   background-color: #2f72dc;
   color: #fff;
 }
-.search {
-  display: flex;
-  align-items: center;
-}
-.search input {
+#search {
+  margin: auto;
   height: 25px;
   width: 150px;
   font-size: 12px;

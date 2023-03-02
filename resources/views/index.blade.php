@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>Non-Academic Digital Certificate Validator (SHA-512)</title>
 </head>
 <body>
@@ -38,9 +39,7 @@
         <header>
             <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
             <div class="auth">
-                <form class="search">
-                    <input type="text" name="search" placeholder="Search...">
-                </form>
+                <input type="text" name="search" id="search" placeholder="Search SHA-512 Checksum">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button>Logout</button>
