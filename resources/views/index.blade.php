@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,8 +71,7 @@
                 <div id="droppable-zone-wrapper">
                     <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
                 </div>
-                <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf"
-                    onchange="hash()">
+                <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
             </div>
         </div>
         <div class="output">
@@ -116,5 +114,4 @@
         </table>
     @endauth
 </body>
-
 </html>
