@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,28 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search').on('input', function() {
+                const query = $(this).val();
+                $.ajax({
+                    url: "{{ route('search') }}",
+                    type: "GET",
+                    dataType: "html",
+                    data: {
+                        'search': query
+                    },
+                    success: function(data) {
+                        $('#search_results').html('');
+                        $('#search_results').append(data);
+                    }
+                });
+            });
+        });
+    </script>
     <title>Non-Academic Digital Certificate Validator (SHA-512)</title>
 </head>
+
 <body>
     @guest
         <header>
@@ -51,7 +72,8 @@
                 <div id="droppable-zone-wrapper">
                     <div id="droppable-zone-text">Drag & drop your certificate here OR click to browse</div>
                 </div>
-                <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
+                <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf"
+                    onchange="hash()">
             </div>
         </div>
         <div class="output">
@@ -76,7 +98,7 @@
                     <th>SHA-512</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="search_results">
                 @if ($certificates->isEmpty())
                     <tr>
                         <td colspan="3">No Data</td>
@@ -94,4 +116,5 @@
         </table>
     @endauth
 </body>
+
 </html>

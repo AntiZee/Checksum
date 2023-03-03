@@ -29,16 +29,3 @@ function clearInput() {
     document.getElementById("output").value = "";
     document.getElementById("save").setAttribute("disabled", "disabled");
 }
-$(document).ready(function () {
-    $('#search').on('input', function () {
-        const query = $(this).val();
-        $.ajax({
-            url: "search",
-            type: "GET",
-            data: { 'search': query },
-            success: function (data) {
-                $('#search_list').html(data);
-            }
-        });
-    });
-});

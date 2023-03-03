@@ -4,53 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\Certificate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
 {
     function search(Request $r)
     {
         if ($r->ajax()) {
-
-            $data = Certificate::where('id', 'like', '%' . $r->search . '%')
-                ->orwhere('title', 'like', '%' . $r->search . '%')
-                ->orwhere('description', 'like', '%' . $r->search . '%')->get();
-
-
-            $output = '';
-            if (count($data) > 0) {
-
-                $output = '
-                <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                </tr>
-                </thead>
-                <tbody>';
-
-                foreach ($data as $row) {
-                    $output .= '
-                        <tr>
-                        <th scope="row">' . $row->id . '</th>
-                        <td>' . $row->title . '</td>
-                        <td>' . $row->description . '</td>
-                        </tr>
-                        ';
-                }
-
-
-
-                $output .= '
-                 </tbody>
-                </table>';
+            $userid = Auth::user()->id;
+            $result = '';
+            $query = $r->search;
+            if (empty($query)) {
+                $data = Certificate::where('user_id', $userid)->get();
             } else {
-
-                $output .= 'No results';
+                $data = Certificate::where('sha512', 'like', '%' . $r->search . '%')->get();
+                if ($data->isEmpty()) {
+                    $result .= '<tr><td colspan="3">No Results</td></tr>';
+                } else {
+                    foreach ($data as $row) {
+                        $result .= '
+                        <tr>
+                            <td>' . $row->name . '</td>
+                            <td>' . $row->time . '</td>
+                            <td>' . $row->sha512 . '</td>
+                        </tr>
+                    ';
+                    }
+                }
             }
-
-            return $output;
+            return $result;
         }
     }
 }
