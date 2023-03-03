@@ -16,14 +16,18 @@ class SearchController extends Controller
             $query = $r->search;
             if (empty($query)) {
                 $data = Certificate::where('user_id', $userid)->get();
-                foreach ($data as $row) {
-                    $result .= '
-                        <tr>
-                            <td>' . $row->name . '</td>
-                            <td>' . $row->time . '</td>
-                            <td>' . $row->sha512 . '</td>
-                        </tr>
-                    ';
+                if ($data->isEmpty()) {
+                    $result .= '<tr><td colspan="3">No Data</td></tr>';
+                } else {
+                    foreach ($data as $row) {
+                        $result .= '
+                            <tr>
+                                <td>' . $row->name . '</td>
+                                <td>' . $row->time . '</td>
+                                <td>' . $row->sha512 . '</td>
+                            </tr>
+                        ';
+                    }
                 }
             } else {
                 $data = Certificate::where('sha512', '=', $r->search)->get();
