@@ -20,9 +20,9 @@ use App\Http\Controllers\SearchController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
 Route::get('/login', [LoginController::class, 'index']);
-Route::post('/login', [LoginController::class, 'auth']);
+Route::post('/login', [LoginController::class, 'auth'])->name('login');
 Route::post('/save', [CertificateController::class, 'store'])->name('save');
-Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/search', [SearchController::class, 'search']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

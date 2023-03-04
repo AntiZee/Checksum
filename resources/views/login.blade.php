@@ -10,7 +10,7 @@
 <body>
     <div id="bg">
         <a href="/" class="back-button">&#8592; Back</a>
-        <form action="/login" method="POST" id="auth">
+        <form action="{{ route('login') }}" method="POST" id="auth">
             @csrf
             @error('email')
                 <div class="form-field">
