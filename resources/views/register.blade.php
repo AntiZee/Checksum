@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="bg">
-        <a href="/" class="back-button">&#8592; Back</a>
+        <a href="main" class="back-button">&#8592; Back</a>
         <form action="{{ route('register') }}" method="POST" id="auth">
             @csrf
             @error('email')
@@ -32,7 +32,7 @@
                 <button class="btn" type="submit">Register</button>
             </div>
             <div class="form-field">
-                <p>Already registered? <a href="/login">Log In</a></p>
+                <p>Already registered? <a href="login">Log In</a></p>
             </div>
         </form>
     </div>

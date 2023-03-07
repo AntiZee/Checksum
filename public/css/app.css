@@ -161,17 +161,6 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#auth .form-field::before {
-  font-size: 20px;
-  position: absolute;
-  left: 15px;
-  top: 17px;
-  color: #888888;
-  content: " ";
-  display: block;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 #e::before {
   background-image: url('/images/user-icon.png');
   width: 20px;
@@ -189,6 +178,21 @@ textarea {
   align-items: center;
   margin-bottom: 1rem;
   position: relative;
+}
+#auth .form-field a {
+  color: #0f0;
+  font-weight: bold;
+}
+#auth .form-field::before {
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  color: #888888;
+  content: " ";
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 #auth input {
   width: 100%;
