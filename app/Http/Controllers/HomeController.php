@@ -13,9 +13,9 @@ class HomeController extends Controller
         if (Auth::user()) {
             $user = Auth::user();
             $certificates = Certificate::where('user_id', $user->id)->orderBy('time')->get();
-            return view('index', compact('certificates'));
+            return view('main', compact('certificates'));
         } else {
-            return view('index');
+            return view('main');
         }
     }
 }

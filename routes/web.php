@@ -18,7 +18,10 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('', function () {
+    return view('index');
+});
+Route::get('/main', [HomeController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store'])->name('register');
 Route::get('/login', [LoginController::class, 'index']);

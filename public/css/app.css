@@ -15,6 +15,14 @@ header {
     background-color: #333;
     color: #fff;
 }
+#intro {
+  color: #fff;
+  text-align: center;
+}
+#desc {
+  color: #fff;
+  text-align: center;
+}
 #head1 {
     color: #fff;
     text-align: center;
@@ -48,9 +56,8 @@ header {
   border: 5px dashed #000;
   border-radius: 20px;
   height: 40vh;
-  width: 50vw;
+  width: 70vw;
   position: relative;
-  overflow: hidden;
 }
 #droppable-zone-wrapper {
   display: flex;
@@ -81,7 +88,8 @@ textarea {
   pointer-events: read;
 }
 .input {
-  float: left;
+  display: flex;
+  justify-content: center;
 }
 .output {
   padding-top: 10px;
@@ -116,7 +124,7 @@ textarea {
 #save[disabled] {
   cursor: not-allowed;
 }
-#bg {
+.bg {
   position: fixed;
   background-color: #333;
   height: 100%;

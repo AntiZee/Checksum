@@ -26,7 +26,7 @@ class LoginController extends Controller
         ];
         if (Auth::attempt($credential)) {
             $r->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('main');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.'
@@ -37,6 +37,6 @@ class LoginController extends Controller
         Auth::logout();
         $r->session()->invalidate();
         $r->session()->regenerateToken();
-        return redirect('/');
+        return redirect('main');
     }
 }

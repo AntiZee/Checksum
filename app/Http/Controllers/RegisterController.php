@@ -28,6 +28,6 @@ class RegisterController extends Controller
         $user->email = $valid['email'];
         $user->password = Hash::make($valid['password']);
         $user->save();
-        return redirect('/login');
+        return redirect('login');
     }
 }
