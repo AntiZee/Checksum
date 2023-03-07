@@ -15,12 +15,22 @@ header {
     background-color: #333;
     color: #fff;
 }
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
 #intro {
-  color: #fff;
+  color: #0f0;
   text-align: center;
 }
 #desc {
   color: #fff;
+  text-align: center;
+}
+#goto {
+  color: #ff0;
   text-align: center;
 }
 #head1 {
@@ -103,7 +113,7 @@ textarea {
   text-align: center;
   line-height: 20vh;
 }
-.remove, .save {
+.remove, .save, .bgoto {
   padding-top: 10px;
   display: flex;
   align-items: center;
@@ -123,6 +133,12 @@ textarea {
 }
 #save[disabled] {
   cursor: not-allowed;
+}
+#bgoto {
+  padding: 10px 15px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .bg {
   position: fixed;

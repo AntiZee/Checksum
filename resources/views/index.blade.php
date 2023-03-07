@@ -9,17 +9,29 @@
 </head>
 <body>
     <div class="bg">
-        <h1 id="intro">
-            Welcome to SHAtificate!
-        </h1>
-        <br>
-        <h2 id="desc">Webiste ini pada dasarnya dirancang dan didesain untuk memverifikasi dan memvalidasi terhadap
-            sertifikat - sertifikat digital non akademik dengan menggunakan algoritma SHA-512. Website ini juga cocok
-            sekali digunakan untuk sertifikat - sertifikat digital yang tidak memiliki indikator suatu keaslian seperti
-            Nomor Seri, Barcode, dan QR Code.
-        </h2>
-        <br>
-        <h3 id="goto">Klik tombol dibawah untuk pergi ke halaman utama SHAtificate dan mencobanya.</h3>
+        <div class="center">
+            <h1 id="intro">
+                Welcome to SHAtificate!
+            </h1>
+            <br>
+            <br>
+            <br>
+            <h2 id="desc">Website ini pada dasarnya dirancang dan didesain untuk memverifikasi dan memvalidasi
+                terhadap sertifikat - sertifikat digital non akademik dengan menggunakan algoritma SHA-512. Website ini
+                juga cocok sekali digunakan untuk sertifikat - sertifikat digital yang tidak memiliki indikator suatu
+                keaslian seperti Nomor Seri, Barcode, dan QR Code.
+            </h2>
+            <br>
+            <br>
+            <br>
+            <h3 id="goto">Klik tombol dibawah untuk pergi ke halaman utama SHAtificate dan mencobanya.</h3>
+            <br>
+            <br>
+            <br>
+            <div class="bgoto">
+                <a href="main"><button id="bgoto">Main Page</button></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
