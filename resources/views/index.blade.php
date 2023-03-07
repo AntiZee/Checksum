@@ -25,9 +25,6 @@
             <br>
             <br>
             <h3 id="goto">Klik tombol dibawah untuk pergi ke halaman utama SHAtificate dan mencobanya.</h3>
-            <br>
-            <br>
-            <br>
             <div class="bgoto">
                 <a href="main"><button id="bgoto">Main Page</button></a>
             </div>

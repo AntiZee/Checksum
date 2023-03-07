@@ -15,10 +15,12 @@
         <header>
             <h1 id="head1">Non-Academic Digital Certificate Verificator (SHA-512)</h1>
             <div class="auth">
-                <a href="/login"><button>Login</button></a>
-                <a href="/register"><button>Register</button></a>
+                <a href="login"><button>Login</button></a>
+                <a href="register"><button>Register</button></a>
             </div>
         </header>
+        <br>
+        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini ↓↓</p>
         <div class="input">
             <div id="droppable-zone">
                 <div id="droppable-zone-wrapper">
@@ -27,16 +29,19 @@
                 <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
             </div>
         </div>
+        <br>
+        <p class="hint">↓↓ Dan hasil akan keluar di kotak bawah ini ↓↓</p>
         <div class="output">
             <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
         </div>
         <div class="remove">
             <button id="remove" onclick="clearInput()">Remove</button>
         </div>
+        <p class="hint">Tekan untuk clear input dan output</p>
     @endguest
     @auth
         <header>
-            <h1 id="head1">Non-Academic Digital Certificate Validator (SHA-512)</h1>
+            <h1 id="head2">Non-Academic Digital Certificate Validator (SHA-512)</h1>
             <div class="auth">
                 <input type="text" name="search" id="search" placeholder="Search SHA-512 Checksum">
                 <form action="{{ route('logout') }}" method="POST">
@@ -45,6 +50,8 @@
                 </form>
             </div>
         </header>
+        <br>
+        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini ↓↓</p>
         <div class="input">
             <div id="droppable-zone">
                 <div id="droppable-zone-wrapper">
@@ -53,12 +60,15 @@
                 <input class="droppable-file" id="input" type="file" accept="image/jpeg, image/png, application/pdf" onchange="hash()">
             </div>
         </div>
+        <br>
+        <p class="hint">↓↓ Dan hasil akan keluar di kotak bawah ini ↓↓</p>
         <div class="output">
             <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
         </div>
         <div class="remove">
             <button id="remove" onclick="clearInput()">Remove</button>
         </div>
+        <p class="hint">Tekan untuk clear input dan output</p>
         <div class="save">
             <form action="{{ route('save') }}" method="POST">
                 @csrf
@@ -67,6 +77,7 @@
                 <button id="save" type="submit" disabled>Save</button>
             </form>
         </div>
+        <p class="hint">Tekan untuk menyimpan data sertifikat ke database. Hasil data sertifikat akan ditampilkan pada tabel dibawah</p>
         <table>
             <thead>
                 <tr>

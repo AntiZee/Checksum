@@ -33,11 +33,14 @@ header {
   color: #ff0;
   text-align: center;
 }
-#head1 {
+#head1, #head2 {
     color: #fff;
     text-align: center;
     font-size: 2rem;
     flex-grow: 1;
+}
+#head1 {
+    transition: opacity 1s ease-in-out;
 }
 .auth {
   display: flex;
@@ -56,6 +59,11 @@ header {
   background-color: #2f72dc;
   color: #fff;
 }
+.hint {
+  text-align: center;
+  font-size: 18px;
+  color: #00f;
+}
 #search {
   margin: auto;
   height: 25px;
@@ -65,7 +73,7 @@ header {
 #droppable-zone {
   border: 5px dashed #000;
   border-radius: 20px;
-  height: 40vh;
+  height: 30vh;
   width: 70vw;
   position: relative;
 }
@@ -98,6 +106,7 @@ textarea {
   pointer-events: read;
 }
 .input {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
 }
