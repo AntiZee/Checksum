@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
-class ResetController extends Controller
+class ForgotController extends Controller
 {
     function index()
     {
         return view('reset');
     }
-    function reset(Request $r)
+    function forgot(Request $r)
     {
         $this->validateEmail($r);
 
@@ -20,7 +20,7 @@ class ResetController extends Controller
         );
         switch ($response) {
             case Password::RESET_LINK_SENT:
-                return back()->with('status', trans($response));
+                return back()->with('status', 'Reset password link sent.');
             case Password::INVALID_USER:
                 return back()->withErrors(['email' => 'The email is not registered.']);
             case Password::INVALID_TOKEN:
