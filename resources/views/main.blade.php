@@ -20,7 +20,7 @@
             </div>
         </header>
         <br>
-        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini ↓↓</p>
+        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini (Hanya menerima jpg/jpeg, png, dan pdf) ↓↓</p>
         <div class="input">
             <div id="droppable-zone">
                 <div id="droppable-zone-wrapper">
@@ -34,10 +34,10 @@
         <div class="output">
             <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
         </div>
+        <p class="hint">Tekan untuk clear input dan output</p>
         <div class="remove">
             <button id="remove" onclick="clearInput()">Remove</button>
         </div>
-        <p class="hint">Tekan untuk clear input dan output</p>
     @endguest
     @auth
         <header>
@@ -51,7 +51,7 @@
             </div>
         </header>
         <br>
-        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini ↓↓</p>
+        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini (Hanya menerima jpg/jpeg, png, dan pdf) ↓↓</p>
         <div class="input">
             <div id="droppable-zone">
                 <div id="droppable-zone-wrapper">
@@ -65,10 +65,11 @@
         <div class="output">
             <textarea id="output" placeholder="SHA-512 Checksum" readonly></textarea>
         </div>
+        <p class="hint">Tekan untuk clear input dan output</p>
         <div class="remove">
             <button id="remove" onclick="clearInput()">Remove</button>
         </div>
-        <p class="hint">Tekan untuk clear input dan output</p>
+        <p class="hint">Tekan untuk menyimpan data sertifikat. Hasil data sertifikat yang pernah tersimpan akan ditampilkan pada tabel dibawah</p>
         <div class="save">
             <form action="{{ route('save') }}" method="POST">
                 @csrf
@@ -77,7 +78,6 @@
                 <button id="save" type="submit" disabled>Save</button>
             </form>
         </div>
-        <p class="hint">Tekan untuk menyimpan data sertifikat ke database. Hasil data sertifikat akan ditampilkan pada tabel dibawah</p>
         <table>
             <thead>
                 <tr>

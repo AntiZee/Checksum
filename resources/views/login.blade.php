@@ -34,6 +34,9 @@
             <div class="form-field">
                 <p>Not registered yet? <a href="register">Register</a></p>
             </div>
+            <div class="form-field">
+                <p><a href="reset" style="color: #f00">Forgot Password</a></p>
+            </div>
         </form>
     </div>
 </body>
