@@ -10,7 +10,7 @@
 <body>
     <div class="bg">
         <a href="login" class="back-button">&#8592; Back</a>
-        <form action="{{ route('reset') }}" method="POST" id="auth">
+        <form action="{{ route('password.reset') }}" method="POST" id="auth">
             @csrf
             @if (session('status'))
                 <div class="form-field">

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="bg">
-        <form action="{{ route('resetpassword') }}" method="POST" id="auth">
+        <form action="{{ route('new') }}" method="POST" id="auth">
             @csrf
             @if (session('status'))
                 <div class="form-field">

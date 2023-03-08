@@ -28,7 +28,7 @@ Route::get('register', [RegisterController::class, 'index']);
 Route::post('register', [RegisterController::class, 'store'])->name('register');
 
 Route::get('forgot', [ForgotController::class, 'index']);
-Route::post('forgot', [ForgotController::class, 'forgot'])->name('forgot');
+Route::post('forgot', [ForgotController::class, 'forgot'])->name('password.reset');
 
 Route::get('reset', [ResetPasswordController::class, 'showResetForm']);
 Route::post('reset', [ResetPasswordController::class, 'reset'])->name('reset');
