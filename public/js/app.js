@@ -35,6 +35,7 @@ function hash() {
         namefile.value = input.name;
         checksum.value = hash;
         save.removeAttribute("disabled");
+        certificate.value = input;
     };
     r.readAsArrayBuffer(input);
 }
