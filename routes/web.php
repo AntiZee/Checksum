@@ -28,10 +28,10 @@ Route::get('register', [RegisterController::class, 'index']);
 Route::post('register', [RegisterController::class, 'store'])->name('register');
 
 Route::get('forgot', [ForgotController::class, 'index']);
-Route::post('forgot', [ForgotController::class, 'forgot'])->name('password.reset');
+Route::post('forgot', [ForgotController::class, 'forgot'])->name('password.email');
 
 Route::get('reset', [ResetPasswordController::class, 'showResetForm']);
-Route::post('reset', [ResetPasswordController::class, 'reset'])->name('reset');
+Route::post('reset', [ResetPasswordController::class, 'reset'])->name('password.reset');
 
 Route::get('login', [LoginController::class, 'index']);
 Route::post('login', [LoginController::class, 'auth'])->name('login');
