@@ -85,12 +85,13 @@
                     <th>Name</th>
                     <th>Date</th>
                     <th>SHA-512</th>
+                    <th>Download</th>
                 </tr>
             </thead>
             <tbody id="search_results">
                 @if ($certificates->isEmpty())
                     <tr>
-                        <td colspan="3">No Data</td>
+                        <td colspan="4">No Data</td>
                     </tr>
                 @else
                     @foreach ($certificates as $c)
@@ -98,6 +99,7 @@
                             <td>{{ $c->name }}</td>
                             <td>{{ $c->time }}</td>
                             <td>{{ $c->sha512 }}</td>
+                            <td><a href="{{ Storage::url($c->file_path) }}" download><button>Download</button></a></td>
                         </tr>
                     @endforeach
                 @endif

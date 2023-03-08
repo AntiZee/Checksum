@@ -251,6 +251,9 @@ th:nth-child(1) {
 th:nth-child(2) {
   width: 15%;
 }
+th:nth-child(3) {
+  width: 65%;
+}
 td {
   background-color: #000;
   color: #fff;
