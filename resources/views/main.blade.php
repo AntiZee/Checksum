@@ -75,7 +75,7 @@
                 @csrf
                 <input type="hidden" name="name" id="namefile" readonly>
                 <input type="hidden" name="sha512" id="hash" readonly>
-                <input type="file" name="certificate" id="input">
+                <input type="file" accept="image/jpeg, image/png, application/pdf" name="certificate">
                 <button id="save" type="submit" disabled>Save</button>
             </form>
         </div>
