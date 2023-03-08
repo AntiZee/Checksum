@@ -13,7 +13,8 @@ class Certificate extends Model
         'user_id',
         'name',
         'sha512',
-        'time'
+        'time',
+        'file_path'
     ];
     function user()
     {

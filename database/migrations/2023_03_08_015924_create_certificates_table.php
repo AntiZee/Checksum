@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('sha512');
             $table->string('time');
+            $table->string('file_path');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

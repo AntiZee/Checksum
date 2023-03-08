@@ -18,6 +18,7 @@ function hash() {
     const output = document.getElementById("output");
     const namefile = document.getElementById("namefile");
     const checksum = document.getElementById("hash");
+    const certificate = document.getElementById("certificate");
     const save = document.getElementById("save");
     const validExt = ["image/jpeg", "image/png", "application/pdf"];
     if (!validExt.includes(input.type)) {

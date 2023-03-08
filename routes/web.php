@@ -23,20 +23,11 @@ Route::get('', function () {
     return view('index');
 });
 Route::get('main', [HomeController::class, 'index']);
-
 Route::get('register', [RegisterController::class, 'index']);
 Route::post('register', [RegisterController::class, 'store'])->name('register');
-
 Route::get('forgot', [ForgotController::class, 'index']);
-Route::post('forgot', [ForgotController::class, 'forgot'])->name('password.email');
-
-Route::get('reset', [ResetPasswordController::class, 'showResetForm']);
-Route::post('reset', [ResetPasswordController::class, 'reset'])->name('password.reset');
-
 Route::get('login', [LoginController::class, 'index']);
 Route::post('login', [LoginController::class, 'auth'])->name('login');
-
 Route::post('save', [CertificateController::class, 'store'])->name('save');
-
 Route::get('search', [SearchController::class, 'search']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
