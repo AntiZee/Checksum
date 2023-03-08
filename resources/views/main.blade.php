@@ -69,13 +69,13 @@
         <div class="remove">
             <button id="remove" onclick="clearInput()">Remove</button>
         </div>
-        <p class="hint">Tekan untuk menyimpan data sertifikat. Hasil data sertifikat yang pernah tersimpan akan ditampilkan pada tabel dibawah</p>
+        <p class="hint">Masukkan kembali sertifikat tersebut dan tekan save untuk menyimpan data sertifikat. Hasil data sertifikat yang pernah tersimpan akan ditampilkan pada tabel dibawah</p>
         <div class="save">
             <form action="{{ route('save') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="name" id="namefile" readonly>
                 <input type="hidden" name="sha512" id="hash" readonly>
-                <input type="file" name="certificate" id="certificate">
+                <input type="file" name="certificate" id="input">
                 <button id="save" type="submit" disabled>Save</button>
             </form>
         </div>

@@ -18,7 +18,6 @@ function hash() {
     const output = document.getElementById("output");
     const namefile = document.getElementById("namefile");
     const checksum = document.getElementById("hash");
-    const certificate = document.getElementById("certificate");
     const save = document.getElementById("save");
     const validExt = ["image/jpeg", "image/png", "application/pdf"];
     if (!validExt.includes(input.type)) {
@@ -35,7 +34,6 @@ function hash() {
         namefile.value = input.name;
         checksum.value = hash;
         save.removeAttribute("disabled");
-        certificate.value = input;
     };
     r.readAsArrayBuffer(input);
 }
