@@ -9,7 +9,7 @@ class ForgotController extends Controller
 {
     function index()
     {
-        return view('reset');
+        return view('forgot');
     }
     function forgot(Request $r)
     {
