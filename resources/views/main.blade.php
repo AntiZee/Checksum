@@ -41,7 +41,7 @@
     @endguest
     @auth
         <header>
-            <h1 id="head2">Non-Academic Digital Certificate Validator (SHA-512)</h1>
+            <h1 id="head2">Non-Academic Digital Certificate Verificator (SHA-512)</h1>
             <div class="auth">
                 <input type="text" name="search" id="search" placeholder="Search SHA-512 Checksum">
                 <form action="{{ route('logout') }}" method="POST">
