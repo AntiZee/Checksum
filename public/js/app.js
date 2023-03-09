@@ -16,9 +16,6 @@ function justhash() {
     const input = document.getElementById("input").files[0];
     const text = document.getElementById("droppable-zone-text");
     const output = document.getElementById("output");
-    const namefile = document.getElementById("namefile");
-    const checksum = document.getElementById("hash");
-    const save = document.getElementById("save");
     const validExt = ["image/jpeg", "image/png", "application/pdf"];
     if (!validExt.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
