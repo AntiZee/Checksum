@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Certificate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class SearchController extends Controller
 {
@@ -25,7 +26,7 @@ class SearchController extends Controller
                                 <td>' . $row->name . '</td>
                                 <td>' . $row->time . '</td>
                                 <td>' . $row->sha512 . '</td>
-                                <td><a href="{{ Storage::url($row->file_path) }}" download><button>Download</button></a></td>
+                                <td><a href="'. Storage::url($row->file_path) .'" download><button>Download</button></a></td>
                             </tr>
                         ';
                     }
@@ -41,7 +42,7 @@ class SearchController extends Controller
                             <td>' . $row->name . '</td>
                             <td>' . $row->time . '</td>
                             <td>' . $row->sha512 . '</td>
-                            <td><a href="{{ Storage::url($row->file_path) }}" download><button>Download</button></a></td>
+                            <td><a href="'. Storage::url($row->file_path) .'" download><button>Download</button></a></td>
                         </tr>
                     ';
                     }
