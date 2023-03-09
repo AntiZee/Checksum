@@ -19,18 +19,19 @@ use App\Http\Controllers\CertificateController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('', function () {
     return view('index');
 });
 Route::get('main', [HomeController::class, 'index']);
-Route::get('register', [RegisterController::class, 'index']);
-Route::post('register', [RegisterController::class, 'store'])->name('register');
-Route::get('forgot', [ForgotController::class, 'index']);
-Route::post('forgot', [ForgotController::class, 'forgot'])->name('password.email');
-Route::get('reset-password/{token}', [ResetController::class, 'index']);
-Route::post('reset-password', [ResetController::class, 'pass'])->name('password.reset');
-Route::get('login', [LoginController::class, 'index']);
-Route::post('login', [LoginController::class, 'auth'])->name('login');
-Route::post('save', [CertificateController::class, 'store'])->name('save');
-Route::get('search', [SearchController::class, 'search']);
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest')->name('register');
+Route::get('forgot-password', [ForgotController::class, 'index'])->middleware('guest');
+Route::post('forgot-password', [ForgotController::class, 'forgot'])->middleware('guest')->name('password.email');
+Route::get('reset-password/{token}', [ResetController::class, 'index'])->middleware('guest')->name('password.reset');;
+Route::post('reset-password', [ResetController::class, 'reset'])->middleware('guest')->name('password.update');
+Route::get('login', [LoginController::class, 'index'])->middleware('guest');
+Route::post('login', [LoginController::class, 'auth'])->middleware('guest')->name('login');
+Route::post('save', [CertificateController::class, 'store'])->middleware('auth')->name('save');
+Route::get('search', [SearchController::class, 'search'])->middleware('auth');
+Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');

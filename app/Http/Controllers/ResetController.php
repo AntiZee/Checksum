@@ -11,18 +11,19 @@ use Illuminate\Auth\Events\PasswordReset;
 
 class ResetController extends Controller
 {
-    function index(string $token)
+    function index($token)
     {
         return view('reset', ['token' => $token]);
     }
-    function pass(Request $request)
+    function reset(Request $r)
     {
-        $request->validate([
+        $r->validate([
             'token' => 'required',
-            'password' => 'required|min:6',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:6',
         ]);
         $status = Password::reset(
-            $request->only('password', 'token'),
+            $r->only('email', 'password', 'password_confirmation', 'token'),
             function (User $user, string $password) {
                 $user->forceFill([
                     'password' => Hash::make($password)

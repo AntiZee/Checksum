@@ -173,6 +173,9 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.text-center {
+  text-align: center;
+}
 #e::before {
   background-image: url('/images/user-icon.png');
   width: 20px;

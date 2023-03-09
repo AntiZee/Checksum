@@ -14,12 +14,12 @@
             @csrf
             @if (session('status'))
                 <div class="form-field">
-                    <p>{{ session('status') }}</p>
+                    <p class="text-center">{{ session('status') }}</p>
                 </div>
             @endif
             @error('email')
                 <div class="form-field">
-                    <p>{{ $message }}</p>
+                    <p class="text-center">{{ $message }}</p>
                 </div>
             @enderror
             <div class="form-field" id="e">
