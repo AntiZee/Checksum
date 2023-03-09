@@ -69,7 +69,7 @@
         <div class="remove">
             <button id="remove" onclick="clearInput()">Remove</button>
         </div>
-        <p class="hint">Masukkan kembali sertifikat tersebut dan tekan save untuk menyimpan data sertifikat. Hasil data sertifikat yang pernah tersimpan akan ditampilkan pada tabel dibawah</p>
+        <p class="hint">Tekan save untuk menyimpan data sertifikat. Hasil data sertifikat yang pernah tersimpan akan ditampilkan pada tabel dibawah</p>
         <div class="save">
             <form action="{{ route('save') }}" method="POST" enctype="multipart/form-data">
                 @csrf
