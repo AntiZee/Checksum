@@ -16,8 +16,4 @@ class Certificate extends Model
         'time',
         'file_path'
     ];
-    function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
