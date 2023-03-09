@@ -13,7 +13,11 @@ class ForgotController extends Controller
     }
     function forgot(Request $r)
     {
-        $this->validateEmail($r);
+        $r->validate([
+            'email' => 'required|email'
+        ], [
+            'email.required' => 'Please enter an email address.'
+        ]);
         $response = $this->broker()->sendResetLink(
             $r->only('email')
         );
@@ -29,14 +33,6 @@ class ForgotController extends Controller
             default:
                 return back()->withErrors(['email' => 'Unknown error. Please try again later.']);
         }
-    }
-    private function validateEmail(Request $r)
-    {
-        $r->validate([
-            'email' => 'required|email'
-        ], [
-            'email.required' => 'Please enter an email address.'
-        ]);
     }
     private function broker()
     {
