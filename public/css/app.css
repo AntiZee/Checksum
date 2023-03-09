@@ -262,3 +262,6 @@ td {
   color: #fff;
   border: none;
 }
+td button {
+  cursor: pointer;
+}

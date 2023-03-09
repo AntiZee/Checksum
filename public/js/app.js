@@ -13,29 +13,35 @@ function changeText() {
 }
 setInterval(changeText, 1500);
 function hash() {
+    const data = document.querySelector('.droppable-file');
     const input = document.getElementById("input").files[0];
     const text = document.getElementById("droppable-zone-text");
     const output = document.getElementById("output");
     const namefile = document.getElementById("namefile");
     const checksum = document.getElementById("hash");
+    const certificate = document.querySelector('input[name="certificate"]');
     const save = document.getElementById("save");
     const validExt = ["image/jpeg", "image/png", "application/pdf"];
     if (!validExt.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
         clearInput();
         return;
+    } else {
+        if (data.files && input) {
+            certificate.files = data.files;
+            const r = new FileReader();
+            r.onload = function (e) {
+                const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
+                const hash = CryptoJS.SHA512(wordArray);
+                output.value = hash;
+                text.innerText = input.name;
+                namefile.value = input.name;
+                checksum.value = hash;
+                save.removeAttribute("disabled");
+            };
+            r.readAsArrayBuffer(input);
+        }
     }
-    const r = new FileReader();
-    r.onload = function (e) {
-        const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
-        const hash = CryptoJS.SHA512(wordArray);
-        output.value = hash;
-        text.innerText = input.name;
-        namefile.value = input.name;
-        checksum.value = hash;
-        save.removeAttribute("disabled");
-    };
-    r.readAsArrayBuffer(input);
 }
 function clearInput() {
     document.getElementById("input").value = "";
