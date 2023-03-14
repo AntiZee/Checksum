@@ -44,6 +44,8 @@ header {
 }
 .auth {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .auth button {
   margin: 0 10px;
@@ -54,6 +56,16 @@ header {
   border-radius: 10px;
   font-size: 1.2rem;
   cursor: pointer;
+}
+@media (min-width: 450px) {
+  .auth {
+    flex-direction: row;
+  }
+}
+@media (max-width: 767px) {
+  .auth button {
+    margin: 10px;
+  }
 }
 .auth button:hover {
   background-color: #2f72dc;
