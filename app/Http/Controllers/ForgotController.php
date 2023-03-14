@@ -23,7 +23,7 @@ class ForgotController extends Controller
         );
         switch ($response) {
             case Password::RESET_LINK_SENT:
-                return back()->with('status', 'Reset password link sent.');
+                return back()->with('status', 'Reset password link sent. Don\'t forget to check the spam too.');
             case Password::INVALID_USER:
                 return back()->withErrors(['email' => 'The email is not registered.']);
             case Password::INVALID_TOKEN:

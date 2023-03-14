@@ -18,7 +18,7 @@ class SearchController extends Controller
             if (empty($query)) {
                 $data = Certificate::where('user_id', $userid)->get();
                 if ($data->isEmpty()) {
-                    $result .= '<tr><td colspan="3">No Data</td></tr>';
+                    $result .= '<tr><td colspan="4">No Data</td></tr>';
                 } else {
                     foreach ($data as $row) {
                         $result .= '
