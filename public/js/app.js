@@ -73,7 +73,7 @@ $(document).ready(function () {
     $('#search').on('input', function () {
         const query = $(this).val();
         $.ajax({
-            url: "/search",
+            url: "search",
             type: "GET",
             data: {
                 'search': query
