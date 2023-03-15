@@ -42,11 +42,12 @@ function justhash() {
             alert("Invalid certificate format. Please select a JPEG, PNG, or PDF file.");
             clearInput();
             return;
+        } else {
+            const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
+            const hash = CryptoJS.SHA512(wordArray);
+            output.value = hash;
+            text.innerText = input.name;
         }
-        const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
-        const hash = CryptoJS.SHA512(wordArray);
-        output.value = hash;
-        text.innerText = input.name;
     };
     r.readAsArrayBuffer(input);
 }
@@ -87,14 +88,15 @@ function hash() {
                     alert("Invalid certificate format. Please select a JPEG, PNG, or PDF file.");
                     clearInput();
                     return;
+                } else {
+                    const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
+                    const hash = CryptoJS.SHA512(wordArray);
+                    output.value = hash;
+                    text.innerText = input.name;
+                    namefile.value = input.name;
+                    checksum.value = hash;
+                    save.removeAttribute("disabled");
                 }
-                const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
-                const hash = CryptoJS.SHA512(wordArray);
-                output.value = hash;
-                text.innerText = input.name;
-                namefile.value = input.name;
-                checksum.value = hash;
-                save.removeAttribute("disabled");
             };
             r.readAsArrayBuffer(input);
         }
