@@ -1,17 +1,17 @@
-const texts = ["Non-Academic Digital Certificate Verificator (SHA-512)", "Login to Save Your Certificate Data"];
 let counter = 0;
 function changeText() {
+    const texts = ["Non-Academic Digital Certificate Verificator (SHA-512)", "Login to Save Your Certificate Data"];
     const head1 = document.getElementById("head1");
     head1.textContent = "Login to Save Your Certificate Data";
     setTimeout(function () {
         counter++;
-        if (counter >= texts.length) {
+        if (counter == texts.length) {
             counter = 0;
         }
         head1.textContent = texts[counter];
-    }, 1500);
+    });
 }
-setInterval(changeText, 1500);
+setInterval(changeText, 2000);
 function justhash() {
     const input = document.getElementById("input").files[0];
     const text = document.getElementById("droppable-zone-text");
