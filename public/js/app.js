@@ -22,34 +22,40 @@ function justhash() {
         { type: "image/png", signature: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] },
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
-    if (!validExtension.includes(input.type)) {
+    const maxSize = 5 * 1024 * 1024;
+    if (input.size > maxSize) {
+        alert("The selected certificate exceeds the maximum file size of 5 MB.");
+        clearInput();
+        return;
+    } else if (!validExtension.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
         clearInput();
         return;
-    }
-    const r = new FileReader();
-    r.onload = function (e) {
-        const fileSignature = new Uint8Array(e.target.result).slice(0, 8);
-        const validType = validSignature.find((item) => {
-            for (let i = 0; i < item.signature.length; i++) {
-                if (item.signature[i] !== fileSignature[i]) {
-                    return false;
+    } else {
+        const r = new FileReader();
+        r.onload = function (e) {
+            const fileSignature = new Uint8Array(e.target.result).slice(0, 8);
+            const validType = validSignature.find((item) => {
+                for (let i = 0; i < item.signature.length; i++) {
+                    if (item.signature[i] !== fileSignature[i]) {
+                        return false;
+                    }
                 }
+                return true;
+            });
+            if (!validType) {
+                alert("Invalid certificate format. Please select a JPEG, PNG, or PDF file.");
+                clearInput();
+                return;
+            } else {
+                const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
+                const hash = CryptoJS.SHA512(wordArray);
+                output.value = hash;
+                text.innerText = input.name;
             }
-            return true;
-        });
-        if (!validType) {
-            alert("Invalid certificate format. Please select a JPEG, PNG, or PDF file.");
-            clearInput();
-            return;
-        } else {
-            const wordArray = CryptoJS.lib.WordArray.create(e.target.result);
-            const hash = CryptoJS.SHA512(wordArray);
-            output.value = hash;
-            text.innerText = input.name;
-        }
-    };
-    r.readAsArrayBuffer(input);
+        };
+        r.readAsArrayBuffer(input);
+    }
 }
 function hash() {
     const data = document.querySelector('.droppable-file');
@@ -66,8 +72,13 @@ function hash() {
         { type: "image/png", signature: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] },
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
+    const maxSize = 5 * 1024 * 1024;
     if (!validExtension.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
+        clearInput();
+        return;
+    } else if (input.size > maxSize) {
+        alert("The selected file exceeds the maximum file size of 5 MB.");
         clearInput();
         return;
     } else {

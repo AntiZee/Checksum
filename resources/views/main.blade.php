@@ -51,7 +51,7 @@
             </div>
         </header>
         <br>
-        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini (Hanya menerima jpg/jpeg, png, dan pdf) ↓↓</p>
+        <p class="hint">↓↓ Masukkan sertifikat digital anda ke dalam kotak di bawah ini (Hanya menerima jpg/jpeg, png, dan pdf. Sertifikat tidak lebih dari 5MB) ↓↓</p>
         <div class="input">
             <div id="droppable-zone">
                 <div id="droppable-zone-wrapper">
