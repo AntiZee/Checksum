@@ -16,13 +16,13 @@ function justhash() {
     const input = document.getElementById("input").files[0];
     const text = document.getElementById("droppable-zone-text");
     const output = document.getElementById("output");
-    const validExt = ["image/jpeg", "image/png", "application/pdf"];
-    const validSign = [
+    const validExtension = ["image/jpeg", "image/png", "application/pdf"];
+    const validSignature = [
         { type: "image/jpeg", signature: [0xFF, 0xD8, 0xFF] },
         { type: "image/png", signature: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] },
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
-    if (!validExt.includes(input.type)) {
+    if (!validExtension.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
         clearInput();
         return;
@@ -30,7 +30,7 @@ function justhash() {
     const r = new FileReader();
     r.onload = function (e) {
         const fileSignature = new Uint8Array(e.target.result).slice(0, 8);
-        const validType = validSign.find((item) => {
+        const validType = validSignature.find((item) => {
             for (let i = 0; i < item.signature.length; i++) {
                 if (item.signature[i] !== fileSignature[i]) {
                     return false;
@@ -59,13 +59,13 @@ function hash() {
     const checksum = document.getElementById("hash");
     const certificate = document.querySelector('input[name="certificate"]');
     const save = document.getElementById("save");
-    const validExt = ["image/jpeg", "image/png", "application/pdf"];
-    const validSign = [
+    const validExtension = ["image/jpeg", "image/png", "application/pdf"];
+    const validSignature = [
         { type: "image/jpeg", signature: [0xFF, 0xD8, 0xFF] },
         { type: "image/png", signature: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] },
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
-    if (!validExt.includes(input.type)) {
+    if (!validExtension.includes(input.type)) {
         alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
         clearInput();
         return;
@@ -75,7 +75,7 @@ function hash() {
             const r = new FileReader();
             r.onload = function (e) {
                 const fileSignature = new Uint8Array(e.target.result).slice(0, 8);
-                const validType = validSign.find((item) => {
+                const validType = validSignature.find((item) => {
                     for (let i = 0; i < item.signature.length; i++) {
                         if (item.signature[i] !== fileSignature[i]) {
                             return false;
