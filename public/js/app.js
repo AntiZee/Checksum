@@ -10,6 +10,7 @@ function changeText() {
         }
         head1.textContent = texts[counter];
     });
+    return;
 }
 setInterval(changeText, 2000);
 function justhash() {
@@ -56,6 +57,7 @@ function justhash() {
         };
         r.readAsArrayBuffer(input);
     }
+    return;
 }
 function hash() {
     const data = document.querySelector('.droppable-file');
@@ -112,13 +114,17 @@ function hash() {
             r.readAsArrayBuffer(input);
         }
     }
+    return;
 }
 function clearInput() {
     document.getElementById("input").value = "";
     document.getElementById("droppable-zone-text").innerText = "Drag & drop your certificate here OR click to browse";
     document.getElementById("output").value = "";
+    document.getElementById("namefile").value = "";
+    document.getElementById("hash").value = "";
     document.querySelector('input[name="certificate"]').value = "";
     document.getElementById("save").setAttribute("disabled", "disabled");
+    return;
 }
 $(document).ready(function () {
     $('#search').on('input', function () {
