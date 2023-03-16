@@ -22,9 +22,9 @@ function justhash() {
         { type: "image/png", signature: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] },
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
-    const maxSize = 5 * 1024 * 1024;
+    const maxSize = 4 * 1024 * 1024;
     if (input.size > maxSize) {
-        alert("The selected certificate exceeds the maximum file size of 5 MB.");
+        alert("The selected certificate exceeds the maximum file size of 4 MB.");
         clearInput();
         return;
     } else if (!validExtension.includes(input.type)) {
@@ -72,9 +72,9 @@ function hash() {
         { type: "image/png", signature: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] },
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
-    const maxSize = 5 * 1024 * 1024;
+    const maxSize = 4 * 1024 * 1024;
     if (input.size >  maxSize) {
-        alert("The selected file exceeds the maximum file size of 5 MB.");
+        alert("The selected file exceeds the maximum file size of 4 MB.");
         clearInput();
         return;
     } else if (!validExtension.includes(input.type)) {
