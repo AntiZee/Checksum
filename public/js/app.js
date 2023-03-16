@@ -73,12 +73,12 @@ function hash() {
         { type: "application/pdf", signature: [0x25, 0x50, 0x44, 0x46] }
     ];
     const maxSize = 5 * 1024 * 1024;
-    if (!validExtension.includes(input.type)) {
-        alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
+    if (input.size >  maxSize) {
+        alert("The selected file exceeds the maximum file size of 5 MB.");
         clearInput();
         return;
-    } else if (input.size > maxSize) {
-        alert("The selected file exceeds the maximum file size of 5 MB.");
+    } else if (!validExtension.includes(input.type)) {
+        alert("Invalid certificate format. Please select a JPEG, PNG, or PDF extension.");
         clearInput();
         return;
     } else {
