@@ -34,7 +34,7 @@ class SearchController extends Controller
             } else {
                 $data = Certificate::where('sha512', '=', $r->search)->get();
                 if ($data->isEmpty()) {
-                    $result .= '<tr><td colspan="3">No Results</td></tr>';
+                    $result .= '<tr><td colspan="4">No Results</td></tr>';
                 } else {
                     foreach ($data as $row) {
                         $result .= '
