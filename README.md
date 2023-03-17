@@ -1,6 +1,5 @@
+# START
 ```
-#START
-
 composer install
 composer update
 copy env
@@ -8,8 +7,9 @@ modify env
 php artisan key:generate
 php artisan migrate
 php artisan serve
-
-#END
+```
+# END
+```
 php artisan cache:clear
 php artisan config:clear
 php artisan view:clear
