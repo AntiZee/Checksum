@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         if (Auth::user()) {
             $user = Auth::user();
-            $certificates = Certificate::where('user_id', $user->id)->orderBy('time')->get();
+            $certificates = Certificate::where('user_id', $user->id)->orderByRaw("STR_TO_DATE(time, '%a %d-%b-%Y %h:%i:%s.%f %p') ASC")->get();
             return view('main', compact('certificates'));
         } else {
             return view('main');
