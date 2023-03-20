@@ -15,7 +15,7 @@ class CertificateController extends Controller
         $format = $now->format('D j-M-Y g:i:s.u A');
         $user = Auth::user();
         $file = $r->file('certificate');
-        $fileName = $now->format('D j-M-Y g-i-s-u-A') . ' ' . $r->input('name') . ' ' . $r->input('sha512') . '.' . $r->file('certificate')->extension();;
+        $fileName = $now->format('D j-M-Y g-i-s-u-A') . ' ' . $r->input('name') . ' ' . $r->input('sha512') . '.' . $r->file('certificate')->extension();
         $filePath = $file->storeAs('public', $fileName);
         $certificate = new Certificate();
         $certificate->user_id = $user->id;
