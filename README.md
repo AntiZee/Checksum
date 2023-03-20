@@ -17,3 +17,8 @@ php artisan route:clear
 php artisan clear-compiled
 php artisan optimize:clear
 ```
+# RESET
+```
+php artisan migrate:fresh
+php artisan storage:clear
+```
