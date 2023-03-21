@@ -14,12 +14,12 @@
             @csrf
             @error('email')
                 <div class="form-field">
-                    <p>{{ $message }}</p>
+                    <p class="text-center">{{ $message }}</p>
                 </div>
             @enderror
             @error('password')
                 <div class="form-field">
-                    <p>{{ $message }}</p>
+                    <p class="text-center">{{ $message }}</p>
                 </div>
             @enderror
             <div class="form-field" id="e">
